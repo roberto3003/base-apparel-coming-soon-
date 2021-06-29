@@ -95,8 +95,15 @@ padding-block-end: calc(var(--padding)*2);
 	color: var(--darkest-grey);
   }
 
-  input[type="submit"]{
+  input[type="submit"], [type="email"] {
 	all:unset;
+  }
+
+  input:not(:placeholder-shown):invalid {
+  border: 0.1rem solid red;
+}
+  .email {
+	border: 0.1rem var(--grey) solid;
   }
 
   .link {
@@ -107,6 +114,7 @@ padding-block-end: calc(var(--padding)*2);
 	background-color: var(--accent);
 	text-decoration: none;
 	border-radius: calc(var(--radius)/2);
+	z-index: 1;
   }
 
   .link img {
