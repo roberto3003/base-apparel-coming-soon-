@@ -81,6 +81,11 @@
 	align-content: space-between;
   }
 
+  .logo {
+margin-block-end: auto;
+padding-block-end: calc(var(--padding)*2);
+  }
+
   h1 {
 	font-size:clamp(2.5rem, 5vw,  80px);
 	font-weight:lighter;
