@@ -26,6 +26,8 @@
   }
 
   /* Set core root defaults */
+
+
   html:focus-within {
 	scroll-behavior: smooth;
   }
@@ -37,16 +39,16 @@
 	--text-light: white;
 	--dark: darkslateblue;
 	--neutral: steelblue;
-    --light: bisque;
-	--accent: gold;
+	--light: bisque;
+	--accent: coral;
 	--grey: hsl(227, 10%, 46%);
 	--darkest-grey: #2e3131;
 	--mbe: 2rem;
-	--padding: 1rem;
+	--padding: 2rem;
 	--gap: 2em;
 	--shadow: 0 0.25vw 1vw  0 rgba(0,0,0,0.5);
-    --shadow-deep: 0 0.5vw 2vw  0 rgba(0,0,0,0.5);
-    --radius: 1em;
+	--shadow-deep: 0 0.5vw 2vw  0 rgba(0,0,0,0.5);
+	--radius: 1em;
 	--bg-image: linear-gradient(179deg, violet 0%, #073AFFFF 100%),radial-gradient(75% 75% at 50% 50%, royalblue 0%, #073AFFFF 100%);
   }
 
@@ -65,7 +67,6 @@
   }
 
   body {
-  margin: 0;
 	min-height: 100vh;
 	max-width: 100vw;
 	text-rendering: optimizeSpeed;
@@ -74,7 +75,7 @@
 	color: var(--text-dark);
 	letter-spacing: 0.25em;
 	background-color: var(--main-bg-color);
-/*	background-image: var(--bg-image);*/
+	/*	background-image: var(--bg-image);*/
 	display: flex;
 	flex-direction: column;
 	align-content: space-between;
@@ -86,7 +87,28 @@
   }
 
   strong {
-color: var(--darkest-grey);
+	color: var(--darkest-grey);
+  }
+
+  input[type="submit"]{
+	all:unset;
+  }
+
+  .link {
+	display: flex;
+	justify-content: center;
+	margin-inline-start:-1em;
+	width: 4em;
+	background-color: var(--accent);
+	text-decoration: none;
+	border-radius: calc(var(--radius)/2);
+  }
+
+  .link img {
+	align-self: center;
+	width: 1.25em;
+	height: 1.25em;
+	padding: 0.25em;
   }
 
   p {
@@ -97,30 +119,17 @@ color: var(--darkest-grey);
 	margin-block-start: auto;
   }
 
-.wrapper {
-  min-height: 100vh;
-  display:flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;	
-  background-image: url('./images/bg-pattern-desktop.svg');
-  background-repeat: no-repeat;
-  background-size:cover;
+  .wrapper {
+	min-height: 100vh;
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;	
+	background-image: url('./images/bg-pattern-desktop.svg');
+	background-repeat: no-repeat;
+	background-size:cover;
 
-}
-
-.link  {
-  position: absolute;
-  cursor:pointer;
-  background-color: var(--accent);
-  text-decoration: none;
-  padding: calc(var(--padding)/2) var(--padding); 
-  border-radius: calc(var(--radius)/2);
-}
-
-.link:hover {
-  box-shadow: var(--shadow-deep);
-}
+  }
 
   .center {
 	text-align: center;
@@ -138,53 +147,83 @@ color: var(--darkest-grey);
 	gap: var(--gap);
   }
 
-.shadow {
-  box-shadow: var(--shadow);
-}
-
-.flex {
-display: flex;
-}
-
-.flex-column {
-  display: flex;
-  flex-direction: column;
-}
-
-  .flex-hero  {
-  display: flex;
-  flex-direction: row-reverse;
-  flex-wrap: wrap;
-  width: clamp(320px, 90vw, 60em);
-  background-color: var(--light);
+  .shadow {
+	box-shadow: var(--shadow);
   }
 
-.hero {
-  flex-grow: 1;
-  flex-basis: 5em;
-  background-image: url('./images/hero-desktop.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50% 8%;
-  min-height:33vh;
-  min-width: 300px;
-}
+  .shadow:hover {
+	box-shadow: var(--shadow-deep);
+  }
 
-article {
-  flex-grow: 1;
-  flex-basis: 5em;
-  max-width: 100%;
-  min-height:33vh;
-background-color: RGBa(255, 255, 255, 0.7);
-}
 
-article > * {
-margin-block-end: var(--mbe);
-}
 
-.form {
-  margin-block-start: auto;
-}
+  .flex {
+	display: flex;
+  }
+
+  .flex-column {
+	display: flex;
+	flex-direction: column;
+  }
+
+  .flex-hero  {
+	margin-block-start: var(--padding);
+	display: flex;
+	flex-direction: row-reverse;
+	flex-wrap: wrap;
+	width: clamp(320px, 90vw, 60em);
+	background-color: var(--light);
+  }
+
+  .hero {
+	flex-grow: 3;
+	flex-basis: 5em;
+	background-image: url('./images/hero-desktop.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 8%;
+	min-height:clamp(300px, 33vh, 33vh);
+	min-width: 300px;
+  }
+
+  article {
+	flex-grow: 5;
+	flex-basis: 5em;
+	max-width: 100%;
+	min-height:33vh;
+	background-color: RGBa(255, 255, 255, 0.7);
+  }
+
+  article > * {
+	margin-block-end: var(--mbe);
+  }
+
+  .form {
+	margin-block-start: auto;
+	flex-wrap: wrap;
+
+  }
+
+  .button {
+	display: flex;
+	justify-content: center;
+	margin-inline-start:auto;
+	background-color: var(--main-bg-color);
+	width: 2.5em;
+	height: 2.5em;
+	border-radius: 50%;
+	overflow: hidden;
+	cursor: pointer;
+  }
+
+  .button img {
+	align-self: center;
+	width: 1.25em;
+	height: 1.25em;
+	background-color: var(--main-bg-color);
+	padding: 0.25em;
+  }
+
 
   /* A elements that don't have a class get default styles */
   a:not([class]) {
