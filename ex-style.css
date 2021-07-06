@@ -1,0 +1,210 @@
+/* Box sizing rules */
+*,
+  *::before,
+  *::after {
+	box-sizing: border-box;
+  }
+
+  /* Remove default margin */
+  body,
+  h1,
+  p
+  {
+	margin: 0;
+  }
+
+  /* Set core root defaults */
+
+
+  html:focus-within {
+	scroll-behavior: smooth;
+  }
+
+  :root {
+	--html-color: gainsboro;
+	--main-bg-color: whitesmoke;
+	--text-dark: firebrick;
+	--text-light: white;
+	--dark: darkslateblue;
+	--neutral: steelblue;
+	--light: bisque;
+	--accent: coral;
+	--grey: hsl(227, 10%, 46%);
+	--darkest-grey: #2e3131;
+	--mbe: 2rem;
+	--padding: 2rem;
+	--gap: 2em;
+	--shadow: 0 0.25vw 1vw  0 rgba(0,0,0,0.5);
+	--shadow-deep: 0 0.5vw 2vw  0 rgba(0,0,0,0.5);
+	--radius: 1em;
+	--bg-image: linear-gradient(179deg, violet 0%, #073AFFFF 100%),radial-gradient(75% 75% at 50% 50%, royalblue 0%, #073AFFFF 100%);
+  }
+
+  /* Inherit fonts for inputs and buttons */
+  input,
+  button,
+  textarea,
+  select {
+	font: inherit;
+  }
+
+
+  /* Set core body defaults */
+  html {
+	background-color: var(--html-color);
+  }
+
+  body {
+	min-height: 100vh;
+	max-width: 100vw;
+	text-rendering: optimizeSpeed;
+	font-family: system-ui;
+	font-size: clamp(1rem, 1.5vw,  30px) ;
+	color: var(--text-dark);
+	letter-spacing: 0.25em;
+	background-color: var(--main-bg-color);
+	/*	background-image: var(--bg-image);*/
+	display: flex;
+	flex-direction: column;
+	align-content: space-between;
+  }
+
+  .logo {
+	margin-block-end: auto;
+	padding-block-end: calc(var(--padding)*2);
+  }
+
+  h1 {
+	font-size:clamp(2.5rem, 5vw,  80px);
+	font-weight:lighter;
+  }
+
+  strong {
+	color: var(--darkest-grey);
+  }
+
+  input[type="submit"], [type="email"] {
+	all:unset;
+  }
+
+  input:not(:placeholder-shown):invalid {
+	border: 0.1rem solid red;
+  }
+  .email {
+	border: 0.1rem var(--grey) solid;
+  }
+
+  .link {
+	display: flex;
+	justify-content: center;
+	margin-inline-start:-1em;
+	width: 4em;
+	background-color: var(--accent);
+	text-decoration: none;
+	border-radius: calc(var(--radius)/2);
+	z-index: 1;
+  }
+
+  .link img {
+	align-self: center;
+	width: 1.25em;
+	height: 1.25em;
+	padding: 0.25em;
+  }
+
+  p {
+	line-height: 1.5;
+  }
+
+  footer {
+	margin-block-start: auto;
+  }
+
+  .wrapper {
+	min-height: 100vh;
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;	
+	background-color: var(--main-bg-color);
+	background-repeat: no-repeat;
+	background-size:cover;
+
+  }
+
+  .padding {
+	padding: var(--padding);
+  }
+
+  .mbe {
+	margin-block-end: var(--mbe);
+  }
+
+  .shadow {
+	box-shadow: var(--shadow);
+  }
+
+  .shadow:hover {
+	box-shadow: var(--shadow-deep);
+  }
+
+
+
+  .flex {
+	display: flex;
+  }
+
+  .flex-column {
+	display: flex;
+	flex-direction: column;
+  }
+
+  .flex-hero  {
+	margin-block-start: var(--padding);
+	display: flex;
+	flex-direction: row-reverse;
+	flex-wrap: wrap;
+	width: clamp(320px, 90vw, 60em);
+	background-color: white;
+  }
+
+  .hero {
+	flex-grow: 3;
+	flex-basis: 5em;
+	background-image: url('./images/hero-desktop.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 8%;
+	min-height:clamp(300px, 33vh, 33vh);
+	min-width: 300px;
+  }
+
+  article {
+	flex-grow: 5;
+	flex-basis: 5em;
+	max-width: 100%;
+	min-height:33vh;
+	background-image: url('./images/bg-pattern-desktop.svg');
+	background-repeat:no-repeat;
+	background-size: cover;
+	background-position: center;
+  }
+
+  article > * {
+	margin-block-end: var(--mbe);
+  }
+
+
+  /* A elements that don't have a class get default styles */
+  a:not([class]) {
+	text-decoration-skip-ink: auto;
+  }
+
+  /* Make images easier to work with */
+  img,
+  picture {
+	max-width: 100%;
+	display: block;
+  }
+
+
