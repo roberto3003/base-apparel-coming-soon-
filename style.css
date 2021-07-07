@@ -24,7 +24,7 @@
 /* light-theme colors */
 :root {
   --bg-color: floralwhite;
-  --text: var(--medium);
+  --text: var(--black);
   --text-contrast: var(--white);
   --theme: var(--white);
   --medium: maroon;
@@ -65,7 +65,7 @@ h1 {
 
 b {
   font-weight: normal;
-  color: var(--black);
+  color: var(--medium);
 }
 
 .card {
