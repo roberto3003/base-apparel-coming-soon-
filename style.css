@@ -5,35 +5,35 @@
   --letter-spacing: 0.3em;
 }
 
-/* dark-theme colors */
-:root {
-  --bg-color: midnightblue;
-  --text: var(--white);
-  --text-contrast: var(--black);
-  --theme: lightsteelblue;
-  --contrast: rebeccapurple;
-  --medium: indigo;
-  --accent: coral;
-  --white: white;
-  --black: rgba(46, 49, 49, 1);
-  --shadow: unset;
-  --shadow-deep: unset;
-}
-
-
 /* light-theme colors */
 :root {
   --bg-color: floralwhite;
   --text: var(--black);
   --text-contrast: var(--white);
   --theme: var(--white);
-  --medium: maroon;
-  --contrast: lightsteelblue;
+  --medium: brown;
+  --contrast: navajowhite;
   --accent: tomato;
   --white: white;
   --black: rgba(46, 49, 49, 1);
   --shadow: 0 0.25vw 1vw  0 rgba(0,0,0,0.2);
   --shadow-deep: 0 0.5vw 2vw  0 rgba(0,0,0,0.2);
+}
+
+
+/* dark-theme colors */
+:root {
+  --bg-color: maroon;
+  --text: var(--white);
+  --text-contrast: var(--black);
+  --theme: darkslategrey;
+  --contrast: brown;
+  --medium: peachpuff;
+  --accent: coral;
+  --white: white;
+  --black: rgba(46, 49, 49, 1);
+  --shadow: unset;
+  --shadow-deep: unset;
 }
 
 
@@ -69,7 +69,7 @@ b {
 }
 
 .card {
-  background-color: var(--white);
+  background-color: var(--theme);
 }
 
 article {
